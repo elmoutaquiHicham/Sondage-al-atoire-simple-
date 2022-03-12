@@ -1,4 +1,4 @@
-# Sondage-aléatoire-simple-
+# Sondage aléatoire simple.
 
 Le projet a pour objectif:
 
