@@ -45,6 +45,10 @@ class pesr:
         horizontal_concat = pd.concat([dfs[i] for i in range(k)], axis=1)
         print('Les échantillons possibles à prélever vu le mode de prélevement (probabilités égales sans remise) sont présentés\n dans le tableau ci-dessous: ')
         return horizontal_concat
+    
+    def box_plot(self,df): ## Méthode donnant les boites à moustache (BoxPlots) associés aux différants échantillons dans le meme graphique.
+        fig = px.box(df)    ## la méthode prend la DataFrame que l'on a eu avec la méthode samples_as()
+        fig.show()
 
 
 class Sondage:                    ## Définition de la class Sondage
@@ -105,5 +109,10 @@ class Sondage:                    ## Définition de la class Sondage
     def comb_possible(self):                               ## Méthode qui calcule le nombre d'échantillons possibles.
         ckn = math.factorial(self.N)/(math.factorial(self.n)*math.factorial(self.N-len(self.x[self.Column])))
         print("Le nombre d'échantillons possibles vu le mode de prélévement (PESR) est :", ckn)
+    
+    def box(self):                                        ## méthode qui retourne la boite à moustache de l'echantillon en question.
+        fig = px.box(self.x,y=self.Column, points="all" )
+        fig.show()
+    
         
         
