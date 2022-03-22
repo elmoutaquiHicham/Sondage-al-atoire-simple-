@@ -40,7 +40,7 @@ class pesr:
             for y in x:
                 obj[i].append(self.data[y])
                 dfs[i] = pd.Series(np.array(obj[i])).to_frame()
-                c = f"echantillion {i+1}"
+                c = f"echantillon {i+1}"
                 dfs[i].columns = [c]
         horizontal_concat = pd.concat([dfs[i] for i in range(k)], axis=1)
         print('Les échantillons possibles à prélever vu le mode de prélevement (probabilités égales sans remise) sont présentés\n dans le tableau ci-dessous: ')
