@@ -4,6 +4,7 @@ import scipy.stats as stat
 import math
 import random
 import scipy.special 
+import plotly.express as px
 
 
 
